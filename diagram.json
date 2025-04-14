@@ -1,0 +1,55 @@
+{
+    "version": 1,
+    "author": "Srujan O",
+    "editor": "wokwi",
+    "parts": [
+      {
+        "type": "board-esp32-devkit-c-v4",
+        "id": "esp",
+        "top": -88.06,
+        "left": -226.7,
+        "rotate": 90,
+        "attrs": {}
+      },
+      {
+        "type": "wokwi-resistor",
+        "id": "r1",
+        "top": -72,
+        "left": -173.35,
+        "rotate": 90,
+        "attrs": { "value": "200" }
+      },
+      {
+        "type": "wokwi-pushbutton-6mm",
+        "id": "btn1",
+        "top": 87.4,
+        "left": -120.8,
+        "rotate": 90,
+        "attrs": { "color": "green", "xray": "1" }
+      },
+      { "type": "wokwi-lcd1602", "id": "lcd1", "top": -236.57, "left": -310.4, "attrs": {} },
+      { "type": "wokwi-potentiometer", "id": "pot1", "top": -174.1, "left": -384.2, "attrs": {} }
+    ],
+    "connections": [
+      [ "esp:TX", "$serialMonitor:RX", "", [] ],
+      [ "esp:RX", "$serialMonitor:TX", "", [] ],
+      [ "pot1:SIG", "lcd1:V0", "yellow", [ "v19.2", "h-0.4" ] ],
+      [ "pot1:VCC", "esp:5V", "red", [ "v67.2", "h66.4" ] ],
+      [ "esp:GND.1", "pot1:GND", "black", [ "v-9.45", "h0", "v-9.6", "h-134.4" ] ],
+      [ "esp:GND.1", "lcd1:K", "black", [ "v-19.05", "h86.4" ] ],
+      [ "esp:5V", "r1:2", "red", [ "v-9.45", "h124.8" ] ],
+      [ "r1:1", "lcd1:A", "green", [ "h0" ] ],
+      [ "esp:GND.1", "lcd1:VSS", "black", [ "v-19.05", "h-57.6" ] ],
+      [ "esp:5V", "lcd1:VDD", "red", [ "v0" ] ],
+      [ "esp:GND.1", "lcd1:RW", "black", [ "v-19.05", "h-19.2" ] ],
+      [ "esp:13", "lcd1:RS", "blue", [ "v-28.65", "h-19.2" ] ],
+      [ "esp:12", "lcd1:E", "violet", [ "v-38.25", "h-19.2" ] ],
+      [ "lcd1:D7", "esp:32", "green", [ "v0" ] ],
+      [ "esp:33", "lcd1:D6", "gold", [ "v0" ] ],
+      [ "esp:25", "lcd1:D5", "orange", [ "v0" ] ],
+      [ "esp:26", "lcd1:D4", "red", [ "v0" ] ],
+      [ "btn1:1.l", "esp:GND.2", "black", [ "v0" ] ],
+      [ "btn1:2.l", "esp:22", "purple", [ "v0" ] ]
+    ],
+    "dependencies": {}
+  }
