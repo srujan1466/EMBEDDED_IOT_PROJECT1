@@ -1,4 +1,6 @@
-This 
+    ->This is a simulation using wokwi with ESP32 by Espressif.
+
+    ->This is a simple debouncing circuit that counts the number of times a button is pressed and display the count on an LCD screen bu using the LiquidCrystal.h library
 
 LINK TO PROJECT SIMULATION AT WOKWI:
 https://wokwi.com/projects/428198642229263361
